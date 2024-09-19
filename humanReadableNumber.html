@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRM</title>
+</head>
+<body>
+    <h1>Human Readable Numbers</h1>
+    <input type="text" id="num" name="nun" required minlength="4" maxlength="8" size="10" />
+    <h1>Итог - <div id="text"></div> </h1> 
+</body>
+<script>
+    document.getElementById('num').addEventListener('input', function() {
+            let number = this.value;
+            let text ="";
+            let o = 0;
+            for (let i = number.length; i >= 0; i-- ){
+                o++;
+                let unit= Number(number.charAt(i));
+                if (o === 0) {
+                if(unit === 0){text = text + "zero";};
+                if(unit === 1){text = text + "one";};
+                if(unit === 2){text = text + "two";};
+                if(unit === 3){text = text + "three";};
+                if(unit === 4){text = text + "four";};
+                if(unit === 5){text = text + "five";};
+                if(unit === 6){text = text + "six";};
+                if(unit === 7){text = text + "seven";};
+                if(unit === 8){text = text + "eight";};
+                if(unit === 9){text = text + "nine";};
+                }
+                if (o === 1) {
+                if(unit === 1){text = text + "teen";};
+                if(unit === 2){text = "twenty-" + text;};
+                if(unit === 3){text = "thirty-" + text;};
+                if(unit === 4){text = "forty-" + text;};
+                if(unit === 5){text = "fifty-" + text;};
+                if(unit === 6){text = "sixty-" + text;};
+                if(unit === 7){text = "seventy-" + text;};
+                if(unit === 8){text = "eighty-" + text;};
+                if(unit === 9){text = "ninety-" + text;};
+                }
+                if (o === 2) {
+                if(unit === 1){text = text + "teen";};
+                if(unit === 2){text = "twenty" + text;};
+                if(unit === 3){text = text + "three";};
+                if(unit === 4){text = text + "four";};
+                if(unit === 5){text = text + "five";};
+                if(unit === 6){text = text + "six";};
+                if(unit === 7){text = text + "seven";};
+                if(unit === 8){text = text + "eight";};
+                if(unit === 9){text = text + "nine";};
+                }
+            };
+            document.getElementById('text').innerHTML = text;
+        });
+    
+</script>
+</html>
